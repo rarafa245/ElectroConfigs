@@ -1,0 +1,12 @@
+{
+  "name": "electrostudy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.5"
+  },
+  "scripts": {
+    "start": "electron ."
+  }
+}
