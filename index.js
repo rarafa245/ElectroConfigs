@@ -1,8 +1,7 @@
 const { app, BrowserWindow } = require('electron')
-const path = require('path')
 
 function createWindow () {
-  const win = new BrowserWindow({ width: 800, height: 600 })
+  const win = new BrowserWindow({ width: 800, height: 600, nodeIntegration: true })
   // win.webContents.openDevTools()
   win.loadFile('view/index.html')
 }
