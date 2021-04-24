@@ -1,17 +1,12 @@
 const { app, BrowserWindow } = require('electron')
-
-function createWindow () {
-  const win = new BrowserWindow({ width: 800, height: 600, nodeIntegration: true })
-  // win.webContents.openDevTools()
-  win.loadFile('view/index.html')
-}
+const appConfigurator = require('./app_configurator')
 
 app.whenReady().then(() => {
-  createWindow()
+  appConfigurator.createWindow('../../view/index.html')
 
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow()
+      appConfigurator.createWindow('../../view/index.html')
     }
   })
 })
