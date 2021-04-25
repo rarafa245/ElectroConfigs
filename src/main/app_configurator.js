@@ -1,4 +1,5 @@
 const { BrowserWindow } = require('electron')
+require('../presenters/ipc_receiver')
 
 class AppConfigurator {
   constructor () { this.win = null }
@@ -7,9 +8,13 @@ class AppConfigurator {
     this.win = new BrowserWindow({
       width: 800,
       height: 600,
-      nodeIntegration: true
+      webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false,
+        enableRemoteModule: true
+      }
     })
-    // this.win.webContents.openDevTools()
+    this.win.webContents.openDevTools()
     this.win.loadFile(dir)
   }
 }
